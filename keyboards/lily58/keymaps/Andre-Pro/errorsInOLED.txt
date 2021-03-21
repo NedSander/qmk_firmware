@@ -1,0 +1,57 @@
+
+nertz@DESKTOP-NABN623 MINGW64 ~
+$ qmk compile -kb lily58 -km Andre-Pro
+Warning: It seems you are not using the MINGW64 terminal.
+While the MSYS one can work, too, we recommend/support you start "MSYS2 MinGW 64-bit".
+
+Ψ Compiling keymap with make lily58:Andre-Pro
+
+
+QMK Firmware 0.10.1
+Making lily58/rev1 with keymap Andre-Pro
+
+avr-gcc.exe (GCC) 8.4.0
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Size before:
+   text    data     bss     dec     hex filename
+      0   17090       0   17090    42c2 .build/lily58_rev1_Andre-Pro.hex
+
+Compiling: keyboards/lily58/lib/rgb_state_reader.c                                                  [OK]
+Compiling: keyboards/lily58/lib/layer_state_reader.c                                                [OK]
+Compiling: keyboards/lily58/lib/logo_reader.c                                                       [OK]
+Compiling: keyboards/lily58/lib/keylogger.c                                                         [OK]
+Compiling: keyboards/lily58/lily58.c                                                                [OK]
+Compiling: keyboards/lily58/rev1/rev1.c                                                             [OK]
+Compiling: keyboards/lily58/keymaps/Andre-Pro/keymap.c                                             keyboards/lily58/keymaps/Andre-Pro/keymap.c: In function 'matrix_init_user':
+keyboards/lily58/keymaps/Andre-Pro/keymap.c:142:24: error: implicit declaration of function 'has_usb' [-Werror=implicit-function-declaration]
+         iota_gfx_init(!has_usb());   // turns on the display
+                        ^~~~~~~
+keyboards/lily58/keymaps/Andre-Pro/keymap.c:142:9: error: too many arguments to function 'iota_gfx_init'
+         iota_gfx_init(!has_usb());   // turns on the display
+         ^~~~~~~~~~~~~
+In file included from keyboards/lily58/keymaps/Andre-Pro/keymap.c:9:
+drivers/avr/ssd1306.h:71:6: note: declared here
+ bool iota_gfx_init(void);
+      ^~~~~~~~~~~~~
+keyboards/lily58/keymaps/Andre-Pro/keymap.c: In function 'matrix_render_user':
+keyboards/lily58/keymaps/Andre-Pro/keymap.c:176:5: error: implicit declaration of function 'matrix_write_ln'; did you mean 'matrix_write_P'? [-Werror=implicit-function-declaration]
+     matrix_write_ln(matrix, read_layer_state());
+     ^~~~~~~~~~~~~~~
+     matrix_write_P
+cc1.exe: all warnings being treated as errors
+ [ERRORS]
+ |
+ |
+ |
+make[1]: *** [tmk_core/rules.mk:386: .build/obj_lily58_rev1_Andre-Pro/keyboards/lily58/keymaps/Andre-Pro/keymap.o] Error 1
+Make finished with errors
+make: *** [Makefile:584: lily58:Andre-Pro] Error 1
+
+nertz@DESKTOP-NABN623 MINGW64 ~
+$ ^C
+
+nertz@DESKTOP-NABN623 MINGW64 ~
+$
